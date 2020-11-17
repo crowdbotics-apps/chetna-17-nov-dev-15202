@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 
 # Create your models here.
@@ -6,18 +7,59 @@ from django.db import models
 
 
 class CustomText(models.Model):
-    title = models.CharField(max_length=150)
+    title = models.CharField(
+        max_length=150,
+    )
+    hhkhk = models.BigIntegerField(
+        null=True,
+        blank=True,
+    )
+    adf = models.BigIntegerField(
+        null=True,
+        blank=True,
+    )
+    wrd = models.BigIntegerField(
+        null=True,
+        blank=True,
+    )
+    fdg = models.BigIntegerField(
+        null=True,
+        blank=True,
+    )
+    ioiui = models.BigIntegerField(
+        null=True,
+        blank=True,
+    )
+    hhi = models.BigIntegerField(
+        null=True,
+        blank=True,
+    )
+    jhjhkhk = models.BigIntegerField(
+        null=True,
+        blank=True,
+    )
 
     def __str__(self):
         return self.title
 
     @property
     def api(self):
-        return f'/api/v1/customtext/{self.id}/'
+        return f"/api/v1/customtext/{self.id}/"
 
     @property
     def field(self):
-        return 'title'
+        return "title"
+
+    def __str__(self):
+        return self.title
+
+    @property
+    def api(self):
+        return f"/api/v1/customtext/{self.id}/"
+
+    @property
+    def field(self):
+        return "title"
 
 
 class HomePage(models.Model):
@@ -25,8 +67,16 @@ class HomePage(models.Model):
 
     @property
     def api(self):
-        return f'/api/v1/homepage/{self.id}/'
+        return f"/api/v1/homepage/{self.id}/"
 
     @property
     def field(self):
-        return 'body'
+        return "body"
+
+    @property
+    def api(self):
+        return f"/api/v1/homepage/{self.id}/"
+
+    @property
+    def field(self):
+        return "body"
